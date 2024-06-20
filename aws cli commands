@@ -1,0 +1,13 @@
+Aftre installation of the AWS CLI in windows system first of all we have to configure the below command to configure the AWS CLI with AWS account
+--------------------------------------------------------------------------------------
+To configure AWS account with AWS CLI: aws Configure
+AWS Access Key ID [None]: Enter secirty key for your account
+AWS Secret Access Key [None]: Enter Secret Access key for your account
+Default region name [None]: ap-south-1
+Default output format [None]: ENTER - this will give defaut format as JSON
+--------------------------------------------------------------------------------------------------
+Security Groups Commands:
+To list all available security groups for the aws account: aws ec2 describe-secirity-groups -- this command will list all security groups with all details.
+To list all availalbe secuitiy groups as text list: aws ec2 describe-security-groups --filters Name=ip-permission.from-port,Values=22 Name=ip-permission.to-port,Values=22 Name=ip-permission.cidr,Values='0.0.0.0/0' --query "SecurityGroups[*].[GroupName]"  --output text --this command list all availalbe Security Groups as text list
+To Create a new Security Group: aws ec2 create-security-group --group-name my-mum --description "My security group"  -- This will create a new security group named "my-mum"
+To Delete Security Group: aws ec2 delete-security-group --group-name my-mum -- This will delete security group named "my-mum"
