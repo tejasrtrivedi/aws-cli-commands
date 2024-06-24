@@ -20,4 +20,17 @@ To Create a new Security Group:
 To Delete Security Group: 
 	aws ec2 delete-security-group --group-name my-mum 
 		-- This will delete security group named "my-mum"
+---------------------------------------------------------------------------------------------------------------
+Command: Keypair
+---------------------------------------------------------------------------------------------------------------
+To list all available keypair available for the aws account:
+	aws ec2 describe-key-pairs
+		-- This command will display all available keypairs with their detail
+To Create new Keypair for the aws account:
+	aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
+		-- This command will create a new Keypair with name "MyKeyPair"
+To Delete particular keypair for the aws account:
+	aws ec2 delete-key-pair --key-name MyKeyPair
+		-- This command will delete a particular keypair named "MyKeyPair"
+------------------------------------------------------------------------------------------------------------------
 
